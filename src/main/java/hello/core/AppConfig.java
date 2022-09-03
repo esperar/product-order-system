@@ -8,6 +8,7 @@ import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
 import hello.core.policy.DiscountPolicy;
 import hello.core.policy.FixDiscountPolicy;
+import hello.core.policy.RateDiscountPolicy;
 
 public class AppConfig {
 
@@ -24,6 +25,7 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy(){
-        return new FixDiscountPolicy();
+        // return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 }
