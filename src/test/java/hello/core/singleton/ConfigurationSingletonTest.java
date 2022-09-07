@@ -33,6 +33,16 @@ public class ConfigurationSingletonTest {
 
         Assertions.assertThat(orderService.getMemberRepository()).isSameAs(memberRepository);
     }
+
+    @Test
+    void configurationDeep(){
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        // AppConfig 도 Bean으로 등록된다.
+        AppConfig bean = ac.getBean(AppConfig.class);
+
+        System.out.println("bean = " + bean.getClass());
+    }
 }
 
 
