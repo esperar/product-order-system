@@ -1,7 +1,9 @@
 package hello.core.policy;
 
 import hello.core.member.Member;
+import org.springframework.beans.factory.annotation.Qualifier;
 
+@Qualifier("mainDiscountPolicy")
 public interface DiscountPolicy {
     /*
     @return 할인 대상 금액
