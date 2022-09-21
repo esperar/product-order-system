@@ -19,7 +19,7 @@ public class BeanLifeCycleTest {
     @Configuration
     static class LifeCycleBean {
 
-        @Bean(initMethod = "init" , destroyMethod = "close")
+        @Bean
         public NetworkClient networkClient(){
             NetworkClient networkClient = new NetworkClient();
             networkClient.setUrl("https://spring-boot.dev");
