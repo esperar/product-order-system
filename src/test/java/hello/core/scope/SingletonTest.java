@@ -13,9 +13,9 @@ public class SingletonTest {
     @Test
     public void singletonBeanFind() {
 
-        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(SingletonTest.class);
-        SingletonTest singletonBean1 = ac.getBean(SingletonTest.class);
-        SingletonTest singletonBean2 = ac.getBean(SingletonTest.class);
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(SingletonBean.class);
+        SingletonBean singletonBean1 = ac.getBean(SingletonBean.class);
+        SingletonBean singletonBean2 = ac.getBean(SingletonBean.class);
 
         System.out.println("singletonBean1 = " + singletonBean1);
         System.out.println("singletonBean2 = " + singletonBean2);
