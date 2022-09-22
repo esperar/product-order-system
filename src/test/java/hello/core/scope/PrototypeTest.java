@@ -40,5 +40,6 @@ public class PrototypeTest {
         public void destroy(){
             System.out.println("PrototypeBean.destroy");
         }
+        
     }
 }
