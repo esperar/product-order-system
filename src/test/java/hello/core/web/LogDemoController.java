@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.inject.Provider;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
@@ -14,17 +13,17 @@ import javax.servlet.http.HttpServletRequest;
 public class LogDemoController {
 
     private final LogDemoService logDemoService;
-    private final Provider<MyLogger> myLoggerProvider;
+    private final MyLogger myLogger;
 
     @RequestMapping("log-demo")
     @ResponseBody
-    public String logDemo(HttpServletRequest request) throws InterruptedException {
+    public String logDemo(HttpServletRequest request) {
         String requestURL = request.getRequestURI().toString();
-        MyLogger myLogger = myLoggerProvider.get();
+
+        System.out.println("myLogger = " + myLogger.getClass());
         myLogger.setRequestURL(requestURL);
 
         myLogger.log("controller test");
-        Thread.sleep(1000);
         logDemoService.logic("testId");
         return "OK";
     }
